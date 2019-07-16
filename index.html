@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>字幕同步效果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/APlayer.min.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 54px;
+            color: #333;
+            margin: 30px 0 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #555;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #555;
+        }
+
+        hr {
+            display: block;
+            width: 7rem;
+            height: 1px;
+            margin: 2.5rem 0;
+            background-color: #eee;
+            border: 0;
+        }
+
+        a {
+            color: #08c;
+            text-decoration: none;
+        }
+
+        p {
+            font-size: 18px;
+        }
+        .aplayer{
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="player1" class="aplayer">
+        <div class="aplayer-lrc-content">
+            [ti:梦醒时分]
+            [ar:李翊君]
+            [al:海枯石烂]
+            [by:李宗盛]
+
+            [00:02.65]作词：李宗盛
+            [00:03.65]作曲：李宗盛
+            [00:30.95]你说
+            [00:32.60]你爱了不该爱的人 
+            [00:35.71]你的心中满是伤痕
+            [00:39.11]你说你犯了不该犯的错
+            [00:43.07]心中满是悔恨
+            [00:46.18]你说你尝尽了生活的苦
+            [00:49.63]找不到可以相信的人
+            [00:53.01]你说你感到万分沮丧
+            [00:56.51]甚至开始怀疑人生
+            [01:01.72]早知道伤心总是难免的
+            [01:05.17]你又何苦一往情深
+            [01:08.68]因为爱情总是难舍难分
+            [01:12.08]何必在意那一点点温存
+            [01:15.48]要知道伤心总是难免的
+            [01:19.31]在每一个梦醒时分
+            [01:22.61]有些事情你现在不必问
+            [01:26.06]有些人你永远不必等
+            [01:56.12]你说你爱了不该爱的人
+            [02:00.87]你的心中满是伤痕
+            [02:04.32]你说你犯了不该犯的错
+            [02:08.18]心中满是悔恨
+            [02:11.28]你说你尝尽了生活的苦
+            [02:14.83]找不到可以相信的人
+            [02:18.05]你说你感到万分沮丧
+            [02:21.81]甚至开始怀疑人生
+            [02:26.82]早知道伤心总是难免的
+            [02:30.42]你又何苦一往情深
+            [02:33.93]因为爱情总是难舍难分
+            [02:37.38]何必在意那一点点温存
+            [02:40.73]要知道伤心总是难免的
+            [02:44.29]在每一个梦醒时分
+            [02:47.79]有些事情你现在不必问
+            [02:51.24]有些人你永远不必等
+            [03:08.62]早知道伤心总是难免的
+            [03:12.17]你又何苦一往情深
+            [03:15.67]因为爱情总是难舍难分
+            [03:19.12]何必在意那一点点温存
+            [03:22.42]要知道伤心总是难免的
+            [03:26.08]在每一个梦醒时分
+            [03:29.58]有些事情你现在不必问
+            [03:33.03]有些人你永远不必等
+        </div>
+    </div>
+    <script src="src/APlayer.js"></script>
+    <script>
+        var ap1 = new APlayer({
+            element: document.getElementById('player1'),
+            narrow: false,
+            autoplay: false,
+            showlrc: true,
+            music: {
+                title: '梦醒时分',
+                author: '李翊君',
+                url: 'music/mengxingshifen.mp3',
+                pic: 'music/李翊君.jpg'
+            },
+            height: 600,
+            width: 1200,
+            lineHeight: 80,
+            fontSize: 70,
+            volume: 0.5
+        });
+        ap1.init();
+    </script>
+
+
+</body>
+
+</html>
