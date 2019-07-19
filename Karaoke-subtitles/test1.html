@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>整体字符</title>
+	<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		body {
+			background-color: #000;
+		}
+
+		#box {
+			text-align: center;
+			width: 100%;
+			height: 1000px;
+			background-color: #000;
+			overflow: hidden;
+		}
+
+		p {
+			color: #fff;
+			margin: 500px auto 0;
+			font-size: 46px;
+		}
+
+		span {
+			font-size: 46px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			function aaa() {
+
+				var oP = document.getElementById('p');
+				var str1 = oP.innerHTML;
+				var str = oP.innerHTML;
+				var a = 0;
+
+				function color(str) {
+					var str_2 = "";
+					var len = str.length;
+					for (var i = 0; i < len; i++) {
+						str_2 = str_2 + "<span id=str" + i + ">" + str.charAt(i) + "</span>"
+					}
+					oP.innerHTML = str_2
+				}
+
+				function play() {
+					len = str.length;
+					document.getElementById('str' + a).style.color = "red";
+					a++;
+					var time = setTimeout(play, 1000);
+					if (a >= len) {
+						clearTimeout(time);
+						oP.innerHTML = str1;
+						a = 0;
+						aaa();
+					}
+				}
+				color(str);
+				play();
+
+			}
+			aaa();
+		}
+	</script>
+</head>
+
+<body>
+	<div id="box">
+		<p id="p">我送你离开 千里之外 你无声黑白</p>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #666;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+        .word {
+            position: relative;
+            white-space: nowrap;
+            color: lightblue;
+            text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+        }
+
+        .word::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: blue;
+            overflow: hidden;
+            animation: run-text 10s infinite linear;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 1);
+        }
+
+        @keyframes run-text {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <span data-text="All I need's a little love in my life 我送你离开 千里之外 你无声黑白 ？" class="word">
+            All I need's a little love in my life
+            我送你离开 千里之外 你无声黑白 ？
+        </span>
+    </p>
+</body>
+
+</html>

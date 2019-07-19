@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双层覆盖</title>
+    <style>
+        .subtitle{
+            position: relative;
+        }
+        .container{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50px;
+            line-height: 50px;
+            font-size: 40px;
+            font-weight: 900;
+        }
+        .moveContainer{
+            z-index: 1000;
+            overflow:hidden;
+            color: blue;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="subtitle">
+        <div id="avstatic" class="container"></div>
+        <div id="av" class="container moveContainer"></div>
+    </div>
+    <!-- https://www.jb51.net/article/702.htm -->
+    <script type="text/javascript" language="javascript">
+        var text = '我送你离开 千里之外 你无声黑白';
+        text = text.replace(/\s/g,'&nbsp;');
+        var av = document.getElementById("av");
+        var avstatic = document.getElementById("avstatic");
+        avstatic.innerHTML = text;
+        av.innerHTML = text;
+        var timer;
+        function MusicGo() {
+            var width = parseInt(av.style.width);
+            if (width < parseInt(avstatic.offsetWidth)) {
+                av.style.width = (width + 1) + "px";
+            } else {
+                av.style.width = "0px";
+            }
+        }
+        av.style.width = "0px"; //由于前面样式表中没有指定，所以在 JavaScript 中一定要指定 
+        setInterval(MusicGo, 100);
+    </script>
+
+</body>
+
+</html>
